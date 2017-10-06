@@ -36,6 +36,13 @@ def update
   end
 end
 
+def destroy
+  @article = Article.find(params[:id])
+  @article.destroy
+  flash[:success] = "Article Successfully Destroyed.."
+  redirect_to articles_path
+end
+
 
 private
 
