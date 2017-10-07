@@ -1,3 +1,4 @@
+
 @import "bootstrap";
 @import 'home';
 
@@ -31,4 +32,29 @@
 
 .top{
   margin-top: 30px;
+}
+
+footer{
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(228, 226, 228, 0.667);
+  color:#777;
+}
+
+footer a:hover{
+  color: #222;
+}
+
+footer small{
+  float: left;
+}
+
+footer ul{
+  float: right;
+  list-style: none;
+}
+
+footer ul li{
+  float: left;
+  margin-left: 15px;
 }
