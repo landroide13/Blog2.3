@@ -1,0 +1,34 @@
+@import "bootstrap";
+@import 'home';
+
+#logo{
+  float: left;
+  color: #ffff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover{
+  text-decoration: none;
+  color: #ffff;
+}
+
+.jumbotron{
+  background-image: asset-url('dronG4.jpg');
+  background-size: cover;
+  height: 600px;
+}
+
+.jumbotron h1{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.top{
+  margin-top: 30px;
+}
