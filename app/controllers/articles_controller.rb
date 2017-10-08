@@ -36,7 +36,7 @@ end
 
 def destroy
   @article.destroy
-  flash[:success] = "Article Successfully Destroyed.."
+  flash[:danger] = "Article Successfully Destroyed.."
   redirect_to articles_path
 end
 
