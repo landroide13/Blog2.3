@@ -1,27 +1,19 @@
-<h1>Listing All Articles</h1>
+<h1 class="top" align="center">Listing All Articles</h1>
 
-<p><%= link_to 'Create new Article', new_article_path%></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |a| %>
-    <tr>
-      <td><%= a.title %></td>
-      <td><%= a.description%></td>
-      <td><%= link_to 'Edit', edit_article_path(a) %></td>
-      <td><%= link_to 'Show', article_path(a) %></td>
-      <td><%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: "Are you sure ?"} %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<p><%= link_to 'Home', root_path %></p>
+<% @articles.each do |a| %>
+  <div class="row toLeft space">
+    <div class="col-md-10">
+      <div class="card border-secondary">
+        <div class="card-header text-center title"><%= link_to a.title, article_path(a)  %></div>
+        <div class="card-body">
+          <p class="card-text"><%= truncate(a.description, length: 55) %></p>
+          <hr>
+          <a><%= link_to 'Edit Article', edit_article_path(a), class:"btn btn-secondary btn-sm", role:"button" %></a>
+          <a><%= link_to 'Delete Article', article_path(a), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
+        </div>  
+      </div>
+    </div>
+  </div>    
+<% end %>
+ 
 
