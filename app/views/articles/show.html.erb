@@ -15,7 +15,8 @@
     </div>
     <div class="card-footer text-muted">
      Created at:
-      <%= @article.created_at %>
+      <%= time_ago_in_words(@article.created_at) %> ago,
+      last update :<%= time_ago_in_words(@article.updated_at) %> ago
     </div>
   </div>
 </div>    
