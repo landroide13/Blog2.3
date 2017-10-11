@@ -1,21 +1,4 @@
 <h1 class="top" align="center">Listing All Articles</h1>
 
-<% @articles.each do |a| %>
-  <div class="row toLeft space">
-    <div class="col-md-10">
-      <div class="card border-secondary">
-        <div class="card-header text-center title"><%= link_to a.title, article_path(a)  %></div>
-        <div class="card-body">
-          <p class="card-text"><%= truncate(a.description, length: 55) %></p>
-          <p><small>Created by :<%= a.user.username if a.user %></small></p>
-          <p><small>Last update :<%= time_ago_in_words(a.updated_at) %> ago</small></p>
-          <hr>
-          <a><%= link_to 'Edit Article', edit_article_path(a), class:"btn btn-secondary btn-sm", role:"button" %></a>
-          <a><%= link_to 'Delete Article', article_path(a), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
-        </div>  
-      </div>
-    </div>
-  </div>    
-<% end %>
- 
+<%= render 'article', obj: @articles %>
 
