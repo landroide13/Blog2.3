@@ -4,6 +4,12 @@
 <div class="top toLeft col-md-10 col-offset-md-2">
   <div class="card text-center">
     <div class="card-header">
+    <% if @article.user %>
+      <p><strong>Created By:</strong></p>    
+      <img class="card-img-top" src="" alt="Card image cap">        
+      <h4 class="card-title"><%= link_to @article.user.username, user_path(@article.user) %></h4>
+      <p class="card-text"><%= pluralize(@article.user.articles.count, "Article") %></p>
+    <% end %>  
       <strong>Description:</strong>
     </div>
     <div class="card-body">
