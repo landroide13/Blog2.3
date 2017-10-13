@@ -15,8 +15,10 @@
     <div class="card-body">
       <div class="card-text"><%= simple_format(@article.description) %></div>
       <hr>
-      <a><%= link_to 'Edit Article', edit_article_path(@article), class:"btn btn-secondary btn-sm", role:"button" %></a>
-      <a><%= link_to 'Delete Article', article_path(@article), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
+      <% if logged_in? && current_user == @article.user %>
+        <a><%= link_to 'Edit Article', edit_article_path(@article), class:"btn btn-secondary btn-sm", role:"button" %></a>
+        <a><%= link_to 'Delete Article', article_path(@article), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
+      <% end %>
       <a><%= link_to 'Back to Articles', articles_path, class:"btn btn-primary btn-sm", role:"button" %></a>
     </div>
     <div class="card-footer text-muted">
