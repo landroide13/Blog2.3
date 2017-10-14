@@ -15,6 +15,9 @@
             <div class="card-body">
               <h4 class="card-title"><%= link_to u.username, user_path(u)%></h4>
               <p class="card-text"><%= pluralize(u.articles.count, "Article") if u.articles%></p>
+              <% if logged_in? and current_user.admin? %>
+                <%= link_to 'Delete User', user_path(u), method: :delete, data: {confirm: "Are you sure ?"}, class:"btn btn-danger" %>
+              <% end %>
             </div>
             <div class="card-footer">
               <small class="text-muted"></small>
