@@ -6,11 +6,11 @@
 </div>  
  
 <% @users.each do |u| %>
-  <div align="center" class="row center top">
+  <div class="row top justify-content-md-center">
     <div class="col-8">
       <div class="list-group" role="tablist">
         <li class="list-group-item">
-          <div class="card border-secondary mb-3">
+          <div class="card border-secondary mb-3 text-center">
             <img class="card-img-top" src="" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title"><%= link_to u.username, user_path(u)%></h4>
