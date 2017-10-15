@@ -41,6 +41,11 @@
 .mgLeft{
   margin-left: 600px;
 }
+
+.mBotton{
+  margin-bottom: 25px;
+}
+
 .space{
   margin-top: 15px;
 }
@@ -55,9 +60,14 @@
   margin-left: 285px;
 }
 
+.paginate{
+  float: none;
+  margin-left: 435px;
+}
+
 footer{
   margin-top: 45px;
-  padding-top: 5px;
+  padding-top: 7px;
   border-top: 1px solid rgba(228, 226, 228, 0.667);
   color:#777;
 }

@@ -1,10 +1,10 @@
 
 <h1 class="top" align="center">Listing All our Users</h1>
 
-<div align="center" class="top center">
+<div align="center" class="top paginate">
   <%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 </div>  
-
+ 
 <% @users.each do |u| %>
   <div align="center" class="row center top">
     <div class="col-8">
@@ -29,6 +29,6 @@
   </div>  
 <% end %>
 
-<div align="center" class="top center">
+<div align="center" class="top paginate">
   <%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 </div>  

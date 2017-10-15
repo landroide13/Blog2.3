@@ -27,10 +27,6 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
-      </ul>
-    </div>
-    <div class="collapse navbar-collapse mgLeft" id="navbarNavDropdown"> 
-      <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.username %>'s Profile <%= 'Admin' if current_user.admin? %>
@@ -38,14 +34,13 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a><%= link_to 'Edit you profile', edit_user_path(current_user), class:"dropdown-item" %></a>
             <a><%= link_to 'View you profile', user_path(current_user), class:"dropdown-item" %></a>
+            <a><%= link_to 'Log Out', logout_path, method: :delete, class:"dropdown-item"%></a>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
-      </ul> 
-      <form class="form-inline my-2 my-lg-0">
-        <a><%= link_to 'Log Out', logout_path, method: :delete, class:"btn btn-secondary", role:"button"%></a>
-      </form>
-    </div>   
+      </ul>
+    </div>
+  
   <% else %>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
