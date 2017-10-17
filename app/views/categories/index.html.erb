@@ -1,0 +1,13 @@
+
+<h1 class="top" align="center">Listing All Categories</h1>
+
+<div class="top pagination justify-content-center">
+  <%= will_paginate(@categories, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+</div>  
+
+<%= render 'category', obj: @categories %>
+
+
+<div class="top pagination justify-content-center">
+  <%= will_paginate(@categories, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+</div> 
