@@ -25,6 +25,8 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     #assert_select 'div.panel-body'
   end
 
+  
+
 
 
 
