@@ -22,6 +22,14 @@
         </div>
       </div>  
 
+       <div class="form-group categories">
+          <div class="col-sm-8">  
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+              <% cb.label(class:"checkbox-inline categories-padding input_checkbox") {cb.check_box(class:'checkbox')} + cb.text %>
+            <% end %>
+        </div>  
+      </div>    
+
       <div class="form-group">
         <div class="col-sm-10">  
           <%= f.submit 'Submit', class:"btn btn-primary btn-sm right" %>
