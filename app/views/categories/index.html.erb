@@ -13,8 +13,8 @@
         <div class="card-body text-center">
          <p><small><%= pluralize(a.articles.count, 'articles') %></small></p>
           <% if logged_in? && current_user.admin? %>
-            <a><%= link_to 'Edit Category', edit_article_path(a), class:"btn btn-secondary btn-sm", role:"button" %></a>
-            <a><%= link_to 'Delete Category', article_path(a), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
+            <a><%= link_to 'Edit Category', edit_category_path(a), class:"btn btn-secondary btn-sm", role:"button" %></a>
+            <a><%= link_to 'Delete Category', category_path(a), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
           <% end %>       
         </div>  
       </div>

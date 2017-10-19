@@ -10,6 +10,20 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def edit
+  end
+
+  def update
+    if @category.update(category_params)
+      flash[:success] = "Category successfully updated.."
+      redirect_to categories_path(@category)
+      else
+        flash[:danger] = "Upss, something comming up , try again"
+        render 'edit'
+      end
+  end
+
+
   def create
     @category = Category.new category_params
     if @category.save
