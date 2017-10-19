@@ -5,7 +5,22 @@
   <%= will_paginate(@categories, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 </div>  
 
-<%= render 'category', obj: @categories %>
+<% @categories.each do |a| %>
+  <div class="row top justify-content-md-center">
+    <div class="col-sm-4">
+      <div class="card border-secondary">
+        <div class="card-header text-center title"><%= link_to a.name, category_path(a)  %></div>
+        <div class="card-body text-center">
+         <p><small><%= pluralize(a.articles.count, 'articles') %></small></p>
+          <% if logged_in? && current_user.admin? %>
+            <a><%= link_to 'Edit Category', edit_article_path(a), class:"btn btn-secondary btn-sm", role:"button" %></a>
+            <a><%= link_to 'Delete Category', article_path(a), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
+          <% end %>       
+        </div>  
+      </div>
+    </div>
+  </div>    
+<% end %>
 
 
 <div class="top pagination justify-content-center">

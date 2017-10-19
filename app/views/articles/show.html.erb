@@ -22,6 +22,9 @@
       <a><%= link_to 'Back to Articles', articles_path, class:"btn btn-primary btn-sm", role:"button" %></a>
     </div>
     <div class="card-footer text-muted">
+    <% if @article.categories.any? %>
+      <p>Categories : <%= render @article.categories %></p>
+    <% end %>
      Created at:
       <%= time_ago_in_words(@article.created_at) %> ago,
       last update :<%= time_ago_in_words(@article.updated_at) %> ago

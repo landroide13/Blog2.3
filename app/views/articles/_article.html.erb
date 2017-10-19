@@ -6,6 +6,9 @@
         <div class="card-header text-center title"><%= link_to a.title, article_path(a)  %></div>
         <div class="card-body">
           <p class="card-text"><%= truncate(a.description, length: 55) %></p>
+          <% if a.categories.any? %>
+            <p>Categories:<%= render a.categories %></p>
+          <% end %>
           <p><small>Created by :<%= a.user.username if a.user %></small></p>
           <p><small>Last update :<%= time_ago_in_words(a.updated_at) %> ago</small></p>
           <hr>

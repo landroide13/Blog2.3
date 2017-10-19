@@ -1,17 +1,2 @@
 
-<% obj.each do |a| %>
-  <div class="row top justify-content-md-center">
-    <div class="col-sm-4">
-      <div class="card border-secondary">
-        <div class="card-header text-center title"><%= link_to a.name, category_path(a)  %></div>
-        <div class="card-body">
-          <hr>
-          <% if logged_in? &&  current_user.admin? %>
-            <a><%= link_to 'Edit Category', edit_article_path(a), class:"btn btn-secondary btn-sm", role:"button" %></a>
-            <a><%= link_to 'Delete Category', article_path(a), class:"btn btn-danger btn-sm", role:"button", method: :delete, data: {confirm: "Are you sure ?"} %></a>
-          <% end %>       
-        </div>  
-      </div>
-    </div>
-  </div>    
-<% end %>
+<span class="badge badge-pill badge-light"><%= link_to category.name, category_path(category) %>&nbsp;</span>
